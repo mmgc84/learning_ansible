@@ -1,7 +1,12 @@
-[webservers]
-ansible1
-ansible2
+ansible1.example.com
+ansible2.example.com
 
-[dbservers]
-ansible1
-ansible2
+[lamp]
+ansible1.example.com
+
+[file]
+ansible2.example.com
+
+[nodes:children]
+lamp
+file

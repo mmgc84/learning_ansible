@@ -4,5 +4,4 @@
   tasks:
   - name: task1
     debug:
-      msg: this is the debug module
       msg: System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}
