@@ -1,0 +1,10 @@
+---
+- name: configure web services
+  hosts: ansible1.example.com
+  tasks:
+    - name: This is the {{ web_package }} package
+      debug:
+        msg:
+    - name: This is the {{ web_service }} service
+      debug:
+        msg: Starting {{ web_service }}
