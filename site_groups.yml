@@ -1,6 +1,8 @@
 ---
 - name: configure web services
   hosts: lamp
+  vars:
+    web_package: nginx
   tasks:
     - name: This is the {{ web_package }} package
       debug:
