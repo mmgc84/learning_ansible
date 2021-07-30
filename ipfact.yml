@@ -1,0 +1,8 @@
+---
+- name: Show fact variable using dotted notation
+  hosts: all
+  tasks:
+    - name: Show IP address
+      debug:
+        msg: >
+          This host uses IP {{ ansible_facts.default_ipv4.address }} 
