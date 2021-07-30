@@ -1,0 +1,11 @@
+---
+- hosts: lamp
+  gather_facts: no
+  tasks:
+  - name: include lamp tasks
+    include: tasks/lamp.yml
+
+- hosts: file
+  tasks:
+  - name: include file tasks
+    include: tasks/file.yml
