@@ -1,0 +1,15 @@
+---
+- name: When demo
+  gather_facts: yes
+  hosts: all
+  vars:
+    supported_distros:
+      - RedHat
+      - CentOS
+      - Fedora
+  tasks:
+    - name: install RH faily specific packages
+      yum:
+        name: nginx
+        state: present
+      when: ansible_distribution in supported_distros
