@@ -1,0 +1,11 @@
+---
+- name: conditional test
+  gather_facts: true
+  hosts: all
+  tasks:
+    - name: install vsftpd if sufficient space
+      package:
+        name: vsftpd
+        state: latest
+      loop: "{{ ansible_mounts }}"
+      when: item.mount == "/boot" and item.size_available > 100000000
