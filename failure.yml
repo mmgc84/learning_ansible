@@ -1,0 +1,12 @@
+---
+- name: demonstrating failed_when
+  hosts: all
+  tasks:
+    - name: Check if a file exists
+      command: ls /tmp/this_should_not_be_here
+      ignore_errors: yes
+      register: result
+      failed_when: '"No such" not in result.stdout'
+    - name: See if we get here
+      debug:
+        msg: Hello
